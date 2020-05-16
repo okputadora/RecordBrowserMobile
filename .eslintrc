@@ -1,0 +1,15 @@
+{
+  "extends": "@react-native-community",
+    "rules": {
+      "import/no-mutable-exports": "off",
+      "jsx-a11y/accessible-emoji": "off",
+      "react/no-did-update-set-state": "off",
+      "react-native/sort-styles": "off",
+      "react/sort-comp": "off",
+      "no-console": "error"
+    },
+  "globals": {
+    "GLOBAL": true,
+    "__DEV__": true
+  }
+}
