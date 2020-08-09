@@ -18,12 +18,11 @@ const errorHandler = (error) => {
 instance.interceptors.response.use(response => response, error => errorHandler(error))
 
 export default async ({ authenticated = true, multiAccount = false, ...rest }) => {
-  const authorization = { Authorization: `OAuth ${(await getOauthToken())}` }
   const accountId = await getAccountId()
 
   const defaults = {
     method: 'GET',
-    baseURL: config.dugeApiUrl,
+    baseURL: // @TODO Configure API,
     headers: {
       ...authenticated ? authorization : {},
       ...multiAccount && accountId ? { 'x-neat-account-id': accountId } : {},
